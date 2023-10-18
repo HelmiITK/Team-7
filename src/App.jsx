@@ -1,4 +1,5 @@
 import "./App.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import HalamanHome from "./pages/HalamanHome";
@@ -12,6 +13,7 @@ import NoAccessToken from "./components/NoAccessToken";
 import HalamanUser from "./pages/HalamanUser";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import Navbar from "./components/Navbar";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -76,6 +78,8 @@ function App() {
               }
             />
 
+            <Route path="/register" element={<Register />} />
+            
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
