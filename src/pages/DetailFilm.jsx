@@ -1,4 +1,5 @@
 import axios from "axios";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -51,6 +52,7 @@ function DetailFilm() {
 
     return (
         <>
+            <Navbar />
             <div className="bg-black w-full">
                 <img
                     className="lg:w-full opacity-50"

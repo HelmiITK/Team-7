@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import MainSection from "../components/MainSection";
+import Navbar from "../components/Navbar";
 import PopularMovie from "../components/PopularMovie"
 import Footer from "../components/Footer"
 import axios from "axios";
@@ -108,6 +109,7 @@ function HalamanHome1() {
 
     return (
         <div>
+            <Navbar />
             <div className="w-full bg-black">
                 <Slider {...settings}>
                     {popularMovies.map((movie) => (

@@ -11,7 +11,6 @@ import Protected from "./components/Protected";
 import NoAccessToken from "./components/NoAccessToken";
 import HalamanUser from "./pages/HalamanUser";
 import { GoogleOAuthProvider } from "@react-oauth/google";
-import Navbar from "./components/Navbar";
 
 function App() {
   return (
@@ -20,7 +19,6 @@ function App() {
         clientId={import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_ID}
       >
         <BrowserRouter>
-          <Navbar />
           <Routes>
             <Route
               path="/"
