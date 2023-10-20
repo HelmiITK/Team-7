@@ -7,10 +7,12 @@ import DetailFilm from "./pages/DetailFilm";
 import NotFound from "./pages/NotFound";
 import Trailer from "./pages/Trailer";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Protected from "./components/Protected";
 import NoAccessToken from "./components/NoAccessToken";
 import HalamanUser from "./pages/HalamanUser";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
         clientId={import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_ID}
       >
         <BrowserRouter>
+          <Navbar />
           <Routes>
             <Route
               path="/"
@@ -61,6 +64,15 @@ function App() {
               element={
                 <NoAccessToken>
                   <Login />
+                </NoAccessToken>
+              }
+            />
+
+            <Route
+              path="/regis"
+              element={
+                <NoAccessToken>
+                  <Register />
                 </NoAccessToken>
               }
             />
