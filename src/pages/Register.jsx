@@ -1,8 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { BiLogInCircle } from "react-icons/bi";
 import GoogleLogin from "../components/GoogleLogin";
+import { BiSolidUserDetail } from "react-icons/bi";
 
 const Register = () => {
   const [firstname, setFirstName] = useState("");
@@ -56,16 +56,17 @@ const Register = () => {
           password,
         }
       );
-      const { data } = response.data;
-      const { token } = data;
 
-      //save our token
-      localStorage.setItem("token", token);
+      // Check for successful registration
+      if (response.status === 201) {
+        alert("Registration successful!");
+        window.location.replace("/login");
+      } else {
+        alert("Registration failed. Please try again.");
+      }
 
-      //redirect to home
-      // navigate("/")
-
-      window.location.replace("/");
+      // Alihkan pengguna ke halaman login
+      window.location.replace("/login");
     } catch (error) {
       if (axios.isAxiosError(error)) {
         alert(error?.response?.data?.message);
@@ -80,7 +81,7 @@ const Register = () => {
       <div className="absolute top-28 p-10 w-full lg:top-14 lg:w-full lg:px-[350px]">
         <div className="border border-red-600 rounded-xl p-5">
           <div className="text-3xl font-bold mb-4 flex flex-row items-center justify-center text-red-600">
-            <BiLogInCircle className="text-5xl" />
+            <BiSolidUserDetail className="text-6xl" />
             <h1>Register</h1>
           </div>
           <form
@@ -162,7 +163,6 @@ const Register = () => {
                                     peer"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
-                  required
                 />
                 <p className="text-sm m-1 text-pink-700 invisible peer-invalid:visible">
                   email tidak valid
