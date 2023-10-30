@@ -11,6 +11,7 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const [isLoading, setIsLoading] = useState(false);
 
   const onLogin = async (event) => {
@@ -23,7 +24,6 @@ const Login = () => {
   //animasi loading setelah button submit diklik
   const handleClick = () => {
     setIsLoading(true);
-
     setTimeout(() => setIsLoading(false), 2000);
   };
 
