@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import MainSection from "../components/MainSection";
-// import PopularMovie from "../components/PopularMovie"
 import Footer from "../components/Footer";
-// import axios from "axios";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -23,65 +21,6 @@ function HalamanHome1() {
   useEffect(() => {
     dispatch(getPopularMovies(setErrors, errors));
   }, [dispatch, errors]);
-
-  // const [popularMovies, setPopularMovies] = useState([]);
-
-  // const [errors, setErrors] = useState({
-  //     isError: false,
-  //     message: null,
-  // });
-
-  //ambil API popular movies setealah berhasil mendapatkan token login
-  // useEffect(() => {
-  //     const getPopularMovies = async () => {
-  //         try {
-  //             // Get token from local storage
-  //             const token = localStorage.getItem("token");
-  //             if (!token) return;
-
-  //             const response = await axios.get(
-  //                 `${import.meta.env.VITE_API_URL}/api/v1/movie/popular`,
-  //                 {
-  //                     headers: {
-  //                         Authorization: `Bearer ${token}`,
-  //                     },
-  //                 }
-  //             );
-  //             const { data } = response.data;
-  //             // console.log(data)
-
-  //             //perulangan untuk menampilkan 3 data di main section
-  //             const popular = [];
-  //             for (let i = 0; i <= data.length; i++) {
-  //                 if (i <= 2) {
-  //                     popular.push(data[i])
-  //                 }
-  //             }
-
-  //             setPopularMovies(popular);
-  //             setErrors({ ...errors, isError: false });
-  //         } catch (error) {
-  //             if (axios.isAxiosError(error)) {
-  //                 setErrors({
-  //                     ...errors,
-  //                     isError: true,
-  //                     message:
-  //                         error?.response?.data?.message || error?.message,
-  //                 });
-  //                 return;
-  //             }
-
-  //             alert(error?.message);
-  //             setErrors({
-  //                 ...errors,
-  //                 isError: true,
-  //                 message: error?.message,
-  //             });
-  //         }
-  //     };
-
-  //     getPopularMovies();
-  // }, []);
 
   if (errors.isError) {
     return <h1>{errors.message}</h1>;
