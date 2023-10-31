@@ -102,3 +102,37 @@ export const logout = () => (dispatch) => {
   dispatch(setToken(null));
   dispatch(setUser(null));
 };
+
+export const register =
+  (email, name, password, navigate) => async (dispatch) => {
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/v1/auth/register`,
+        {
+          email,
+          name,
+          password,
+        }
+      );
+
+      const { data } = response.data;
+      const { token } = data;
+
+      //save our token
+      dispatch(setToken(token));
+      // Check for successful registration
+      if (response.status === 201) {
+        alert("Registration successful!");
+        // dispatch({ type: "REGISTER_SUCCESS" });
+        navigate("/login");
+      } else {
+        alert("Registration failed. Please try again.");
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        alert(error?.response?.data?.message);
+        return;
+      }
+      alert(error?.message);
+    }
+  };
