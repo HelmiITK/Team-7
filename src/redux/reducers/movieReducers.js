@@ -11,14 +11,6 @@ const movieSlice = createSlice({
     setPopular: (state, action) => {
       state.popular = action.payload;
     },
-    fetchMoviesSuccess: (state, action) => {
-      state.searchResults = action.payload;
-      state.error = null;
-    },
-    fetchMoviesError: (state, action) => {
-      state.searchResults = [];
-      state.error = action.payload;
-    },
   },
 });
 
