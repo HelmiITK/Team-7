@@ -120,10 +120,10 @@ export const register = (email, name, password, navigate) => async () => {
 
     // Check for successful registration
     if (response.status === 201) {
-      alert("Registration successful !");
+      alert("Registration Successful !");
       navigate("/login");
     } else {
-      alert("Registration failed. Please try again.");
+      alert("Registration Failed!, Please try again!");
     }
   } catch (error) {
     if (axios.isAxiosError(error)) {
