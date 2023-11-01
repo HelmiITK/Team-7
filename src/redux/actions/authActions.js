@@ -121,7 +121,6 @@ export const register = (email, name, password, navigate) => async () => {
     // Check for successful registration
     if (response.status === 201) {
       alert("Registration successful !");
-      // dispatch(setToken(null));
       navigate("/login");
     } else {
       alert("Registration failed. Please try again.");
