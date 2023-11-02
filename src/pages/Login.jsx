@@ -11,7 +11,7 @@ import spiderMan from "../assets/spiderman_1090806.png";
 import xman from "../assets/xman.png";
 import hulk from "../assets/hulk.png";
 import flash from "../assets/flash.png";
-import ironMan from "../assets/ironMan.png"
+import ironMan from "../assets/ironMan.png";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -52,8 +52,9 @@ const Login = () => {
       <div className="bg-slate-950 w-full h-screen">
         <div
           className={`absolute px-4 lg:pt-20 w-full lg:w-full lg:px-[760px]
-                            ${isLoading ? "opacity-50 pointer-events-none" : ""
-            }`}
+                            ${
+                              isLoading ? "opacity-50 pointer-events-none" : ""
+                            }`}
         >
           {isLoading && (
             <div
@@ -89,21 +90,9 @@ const Login = () => {
                     alt="icon superhero1"
                     className="p-3 lg:p-4"
                   />
-                  <img
-                    src={hulk}
-                    alt="icon hulk"
-                    className="p-3 lg:p-4"
-                  />
-                  <img
-                    src={flash}
-                    alt="icon iron man"
-                    className="p-3 lg:p-4"
-                  />
-                  <img
-                    src={xman}
-                    alt="icon xman"
-                    className="p-3 lg:p-4"
-                  />
+                  <img src={hulk} alt="icon hulk" className="p-3 lg:p-4" />
+                  <img src={flash} alt="icon iron man" className="p-3 lg:p-4" />
+                  <img src={xman} alt="icon xman" className="p-3 lg:p-4" />
                 </Slider>
               </div>
             </div>
